@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 12:25:42 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/24 13:52:34 by ayblin           ###   ########.fr       */
+/*   Created: 2021/11/28 23:26:18 by ayblin            #+#    #+#             */
+/*   Updated: 2021/11/28 23:28:23 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char const *s)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	len = 0;
+	if (!s)
+		return (len);
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }

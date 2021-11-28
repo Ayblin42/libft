@@ -6,7 +6,7 @@
 /*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 20:08:48 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/27 20:14:33 by ayblin           ###   ########.fr       */
+/*   Updated: 2021/11/28 23:33:48 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static int	ft_count_nbr(int n)
 
 static char	*ft_rev_str(char *str)
 {
-	int		i;
-	int		j;
-	char	tmp;
+	size_t		i;
+	size_t		j;
+	char		tmp;
 
 	i = 0;
 	j = ft_strlen(str) - 1;

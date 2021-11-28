@@ -6,7 +6,7 @@
 /*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:53:58 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/28 01:18:59 by ayblin           ###   ########.fr       */
+/*   Updated: 2021/11/28 22:55:55 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t			i;
-	unsigned int	len;
+	size_t	i;
+	size_t	len;
 
 	len = ft_strlen(src);
 	i = 0;
