@@ -6,7 +6,7 @@
 /*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:45:06 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/25 18:41:39 by ayblin           ###   ########.fr       */
+/*   Updated: 2021/11/28 16:59:16 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		ft_putchar_fd(char c, int fd);
 char		*ft_itoa(int n);
 void		ft_putstr_fd(char *s, int fd);
 void		*ft_memset(void *s, int c, size_t n);
-void		ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *dest, const void *src, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -53,5 +53,11 @@ void		*ft_memchr(const void *s, int c, size_t n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}t_list;
+t_list		*ft_lstnew(void *content);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:03:13 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/25 17:05:22 by ayblin           ###   ########.fr       */
+/*   Updated: 2021/11/28 01:01:42 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 		return ((char *)big);
 	while (big[i] && (size_t)i < len)
 	{
+		if (i + ft_strlen(little) > (int)len)
+			return (NULL);
 		j = 0;
 		while (big[i + j] == little[j])
 		{	
