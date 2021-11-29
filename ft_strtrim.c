@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	isset(const char *str, char c)
 {
@@ -28,19 +29,21 @@ static int	isset(const char *str, char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		start;
-	int		end;
-	char	*ret;
+	int			i;
+	int			start;
+	int			end;
+	char		*ret;
 
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (isset(set, s1[start]) && s1[start])
 		start++;
-	while (isset(set, s1[end]) && s1[end])
+	while (end >= 0 && isset(set, s1[end]) && s1[end])
 		end--;
-	ret = malloc(sizeof(char) * (end - start + 2));
+	if (start > end)
+		return (ft_strdup(""));
+	ret = malloc(sizeof(char) * ((end - start) + 2));
 	while (i <= (end - start) && s1[start + i])
 	{
 		ret[i] = s1[start + i];

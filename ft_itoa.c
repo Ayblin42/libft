@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 	int		i;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	i = 0;
 	sign = 1;
 	len = ft_count_nbr(n);

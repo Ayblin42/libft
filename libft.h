@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayblin <ayblin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ayblin <ayblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:45:06 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/28 23:28:42 by ayblin           ###   ########.fr       */
+/*   Updated: 2021/11/29 17:41:05 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+size_t		ft_strlcat(char *s1, const char *s2, size_t n);
 
 #endif

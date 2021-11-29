@@ -18,7 +18,13 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	t_list	*tmp;
 
 	tmp = *alst;
-	while (tmp->next)
+	while (tmp)
+	{
+		if (tmp->next == NULL)
+		{
+			tmp->next = new;
+			break ;
+		}
 		tmp = tmp->next;
-	tmp->next = new;
+	}
 }

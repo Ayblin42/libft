@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayblin <ayblin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:48:29 by ayblin            #+#    #+#             */
-/*   Updated: 2021/11/29 18:14:26 by ayblin           ###   ########.fr       */
+/*   Created: 2021/11/29 17:01:41 by ayblin            #+#    #+#             */
+/*   Updated: 2021/11/29 17:43:00 by ayblin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	destlen;
+	t_list	*begin_list;
+	t_list	*new;
 
-	i = 0;
-	j = 0;
-	destlen = ft_strlen(dst);
-	while (i < size && dst[i])
-		i++;
-	if (i == size)
-		return (i + ft_strlen(src));
-	while (src[j])
+	if (!f || !del)
+		return (0);
+	begin_list = NULL;
+	while (lst)
 	{
-		if (j < size - 1 - destlen)
-		{
-			dst[i] = src[j];
-			i++;
-		}
-		j++;
+		new = ft_lstnew((f)(lst->content));
+		if (!new)
+			ft_lstclear(&begin_list, del);
+		ft_lstadd_back(&begin_list, new);
+		lst = lst->next;
 	}
-	dst[i] = '\0';
-	return (destlen + j);
+	return (begin_list);
 }
